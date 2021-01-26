@@ -85,7 +85,7 @@ const GameBoard: React.FC<Props> = ({ onScoreUpdate, score, onSetWinner }) => {
       setTimeout(() => {
         reverseCards();
         setDisabled(false);
-      }, 2000);
+      }, 700);
     }
     onScoreUpdate(score + 1);
     setOpenCards([]);
