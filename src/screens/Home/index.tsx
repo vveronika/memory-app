@@ -23,7 +23,7 @@ const Home: React.FC<Props> = (props: Props) => {
       <BaseInput
         value={name}
         onChange={(e) => setName(e.currentTarget.value)}
-        label="LABEL"
+        label="Insert your nickname"
       />
       <BaseButton
         disabled={!name}
