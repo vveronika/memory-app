@@ -21,9 +21,7 @@ const GameCard: React.FC<Props> = (props) => {
           onClick={props.clickHandler}
         />
         <BackCard
-          disabled={props.disableCardClick}
           style={{ backgroundImage: `url(${props.symbol.img})` }}
-          onClick={props.clickHandler}
         />
       </ReactCardFlip>
     </CardWrapper>

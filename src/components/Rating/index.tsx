@@ -13,7 +13,7 @@ const Rating: React.FC<Props> = ({ rating }) => {
       <TextWrapper>Rating:</TextWrapper>
       <RatingWrapper>
         {rating.map((r) => (
-          <RatingBox rating={r} />
+          <RatingBox key={`${r.userName}${Math.random()}`} rating={r} />
         ))}
       </RatingWrapper>
     </CounterWrapper>

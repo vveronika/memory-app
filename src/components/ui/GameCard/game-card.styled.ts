@@ -16,9 +16,11 @@ export const FrontCard = styled.button`
   width: 150px;
   height: 150px;
   color: white;
+  outline: none;
+  cursor: pointer;
 `;
 
-export const BackCard = styled.button`
+export const BackCard = styled.div`
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;

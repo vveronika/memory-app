@@ -10,6 +10,7 @@ import {
 import BaseButton from 'components/ui/BaseButton';
 import { RootState, Score } from 'types';
 import Rating from 'components/Rating';
+import { compareScores } from 'helpers/helperFunctions';
 
 interface Props extends RouteComponentProps<any> {
   userName: string;
@@ -23,12 +24,16 @@ const SuccessScreen: React.FC<Props> = (props: Props) => {
       props.history.push('/');
     }
   }, []);
+
   const playAgainHandler = () => {
     props.history.push('memo');
   };
+
   const changeUserHandler = () => {
     props.history.push('/');
   };
+
+  const sortedRating = props.rating.sort(compareScores)
   return (
     <ScreenWrapper>
       <SuccessMessage>Congratulations, {props.userName}!</SuccessMessage>
@@ -39,7 +44,7 @@ const SuccessScreen: React.FC<Props> = (props: Props) => {
         <BaseButton label="Play again!" onClick={playAgainHandler} />
         <BaseButton label="Change user" onClick={changeUserHandler} />
       </ButtonsWrapper>
-      {props.rating.length > 0 && <Rating rating={props.rating} />}
+      {props.rating.length > 0 && <Rating rating={sortedRating} />}
     </ScreenWrapper>
   );
 };
